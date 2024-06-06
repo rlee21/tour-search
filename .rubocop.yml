@@ -1,0 +1,34 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+  - rubocop-factory_bot
+  - rubocop-rspec_rails
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'vendor/**/*'
+
+  NewCops: enable
+
+Layout/LineLength:
+  Max: 120
+  AllowedPatterns: ['(\s*)# '] # Ignore lines with comments
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/ModuleLength:
+  Max: 150
+
+RSpec/MultipleExpectations:
+  Enabled: true
+  Max: 15
+
+Style/ClassVars:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false

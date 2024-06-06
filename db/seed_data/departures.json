@@ -1,0 +1,702 @@
+[
+  {
+    "SPA102225": {
+      "status": "Active",
+      "name": "Best of Spain in 14 Days",
+      "days": 14,
+      "start_date": "2025-10-25",
+      "end_date": "2025-11-04",
+      "start_city": "Barcelona",
+      "end_city": "Sevilla",
+      "seats_available": 0,
+      "seats_booked": 28,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "PRB102325": {
+      "status": "Active",
+      "name": "Best of Prague & Budapest in 8 Days",
+      "days": 8,
+      "start_date": "2025-10-23",
+      "end_date": "2025-10-30",
+      "start_city": "Prague",
+      "end_city": "Budapest",
+      "seats_available": 6,
+      "seats_booked": 22,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "SPS102325": {
+      "status": "Active",
+      "name": "Best of Andalucía in 10 Days",
+      "days": 10,
+      "start_date": "2025-10-23",
+      "end_date": "2025-11-01",
+      "start_city": "Cordoba",
+      "end_city": "Seville",
+      "seats_available": 0,
+      "seats_booked": 26,
+      "seats_maximum": 26
+    }
+  },
+  {
+    "PAR102325": {
+      "status": "Active",
+      "name": "Best of Paris in 7 Days",
+      "days": 7,
+      "start_date": "2025-10-23",
+      "end_date": "2025-10-29",
+      "start_city": "Paris",
+      "end_city": "Paris",
+      "seats_available": 9,
+      "seats_booked": 15,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "ROM102325": {
+      "status": "Active",
+      "name": "Best of Rome in 7 Days",
+      "days": 7,
+      "start_date": "2025-10-23",
+      "end_date": "2025-10-29",
+      "start_city": "Rome",
+      "end_city": "Rome",
+      "seats_available": 3,
+      "seats_booked": 21,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "ISC102325": {
+      "status": "Active",
+      "name": "Best of Sicily in 11 Days",
+      "days": 11,
+      "start_date": "2025-10-23",
+      "end_date": "2025-11-02",
+      "start_city": "Palermo",
+      "end_city": "Catania",
+      "seats_available": 9,
+      "seats_booked": 19,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "BAM102325": {
+      "status": "Active",
+      "name": "Best of Barcelona & Madrid in 8 Days",
+      "days": 8,
+      "start_date": "2025-10-23",
+      "end_date": "2025-10-30",
+      "start_city": "Barcelona",
+      "end_city": "Madrid",
+      "seats_available": 0,
+      "seats_booked": 24,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "ITT102425": {
+      "status": "Active",
+      "name": "Best of Tuscany in 12 Days",
+      "days": 12,
+      "start_date": "2025-10-24",
+      "end_date": "2025-11-04",
+      "start_city": "Florence",
+      "end_city": "Lucca",
+      "seats_available": 2,
+      "seats_booked": 21,
+      "seats_maximum": 23
+    }
+  },
+  {
+    "POR102425": {
+      "status": "Active",
+      "name": "Heart of Portugal in 12 Days",
+      "days": 12,
+      "start_date": "2025-10-24",
+      "end_date": "2025-11-04",
+      "start_city": "Lisbon",
+      "end_city": "Porto",
+      "seats_available": 0,
+      "seats_booked": 27,
+      "seats_maximum": 27
+    }
+  },
+  {
+    "SPA102425": {
+      "status": "Active",
+      "name": "Best of Spain in 14 Days",
+      "days": 14,
+      "start_date": "2025-10-24",
+      "end_date": "2025-11-06",
+      "start_city": "Barcelona",
+      "end_city": "Sevilla",
+      "seats_available": 0,
+      "seats_booked": 26,
+      "seats_maximum": 26
+    }
+  },
+  {
+    "VFR102425": {
+      "status": "Active",
+      "name": "Best of Venice, Florence & Rome in 10 Days",
+      "days": 10,
+      "start_date": "2025-10-24",
+      "end_date": "2025-11-02",
+      "start_city": "Venice",
+      "end_city": "Rome",
+      "seats_available": 4,
+      "seats_booked": 24,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "TUR102425": {
+      "status": "Active",
+      "name": "Best of Turkey in 13 Days",
+      "days": 13,
+      "start_date": "2025-10-24",
+      "end_date": "2025-11-05",
+      "start_city": "Istanbul",
+      "end_city": "Kusadasi",
+      "seats_available": 1,
+      "seats_booked": 27,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "ISC102525": {
+      "status": "Active",
+      "name": "Best of Sicily in 11 Days",
+      "days": 11,
+      "start_date": "2025-10-25",
+      "end_date": "2025-11-04",
+      "start_city": "Palermo",
+      "end_city": "Catania",
+      "seats_available": 0,
+      "seats_booked": 28,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "POR102625": {
+      "status": "Active",
+      "name": "Heart of Portugal in 12 Days",
+      "days": 12,
+      "start_date": "2025-10-26",
+      "end_date": "2025-11-06",
+      "start_city": "Lisbon",
+      "end_city": "Porto",
+      "seats_available": 1,
+      "seats_booked": 27,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "VFR102825": {
+      "status": "Active",
+      "name": "Best of Venice, Florence & Rome in 10 Days",
+      "days": 10,
+      "start_date": "2025-10-28",
+      "end_date": "2025-11-06",
+      "start_city": "Venice",
+      "end_city": "Rome",
+      "seats_available": 11,
+      "seats_booked": 17,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "ITH102825": {
+      "status": "Active",
+      "name": "Heart of Italy in 9 Days",
+      "days": 9,
+      "start_date": "2025-10-28",
+      "end_date": "2025-11-05",
+      "start_city": "Rome",
+      "end_city": "Florence",
+      "seats_available": 0,
+      "seats_booked": 28,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "ISC103025": {
+      "status": "Active",
+      "name": "Best of Sicily in 11 Days",
+      "days": 11,
+      "start_date": "2025-10-30",
+      "end_date": "2025-11-09",
+      "start_city": "Palermo",
+      "end_city": "Catania",
+      "seats_available": 1,
+      "seats_booked": 27,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "VFR103125": {
+      "status": "Active",
+      "name": "Best of Venice, Florence & Rome in 10 Days",
+      "days": 10,
+      "start_date": "2025-10-31",
+      "end_date": "2025-11-09",
+      "start_city": "Venice",
+      "end_city": "Rome",
+      "seats_available": 1,
+      "seats_booked": 27,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "ITT103125": {
+      "status": "Active",
+      "name": "Best of Tuscany in 12 Days",
+      "days": 12,
+      "start_date": "2025-10-31",
+      "end_date": "2025-11-11",
+      "start_city": "Florence",
+      "end_city": "Lucca",
+      "seats_available": 8,
+      "seats_booked": 16,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "ISC110125": {
+      "status": "Active",
+      "name": "Best of Sicily in 11 Days",
+      "days": 11,
+      "start_date": "2025-11-01",
+      "end_date": "2025-11-11",
+      "start_city": "Palermo",
+      "end_city": "Catania",
+      "seats_available": 1,
+      "seats_booked": 27,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "ISC110625": {
+      "status": "Active",
+      "name": "Best of Sicily in 11 Days",
+      "days": 11,
+      "start_date": "2025-11-06",
+      "end_date": "2025-11-16",
+      "start_city": "Palermo",
+      "end_city": "Catania",
+      "seats_available": -1,
+      "seats_booked": 29,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "BAM110625": {
+      "status": "Active",
+      "name": "Best of Barcelona & Madrid in 8 Days",
+      "days": 8,
+      "start_date": "2025-11-06",
+      "end_date": "2025-11-13",
+      "start_city": "Barcelona",
+      "end_city": "Madrid",
+      "seats_available": 9,
+      "seats_booked": 15,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "ISC110825": {
+      "status": "Active",
+      "name": "Best of Sicily in 11 Days",
+      "days": 11,
+      "start_date": "2025-11-08",
+      "end_date": "2025-11-18",
+      "start_city": "Palermo",
+      "end_city": "Catania",
+      "seats_available": -1,
+      "seats_booked": 29,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "ISC111325": {
+      "status": "Active",
+      "name": "Best of Sicily in 11 Days",
+      "days": 11,
+      "start_date": "2025-11-13",
+      "end_date": "2025-11-23",
+      "start_city": "Palermo",
+      "end_city": "Catania",
+      "seats_available": -1,
+      "seats_booked": 29,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "ISC112025": {
+      "status": "Active",
+      "name": "Best of Sicily in 11 Days",
+      "days": 11,
+      "start_date": "2025-11-20",
+      "end_date": "2025-11-30",
+      "start_city": "Palermo",
+      "end_city": "Catania",
+      "seats_available": 0,
+      "seats_booked": 28,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "IBL112025": {
+      "status": "Active",
+      "name": "Best of Istanbul in 7 Days",
+      "days": 7,
+      "start_date": "2025-11-20",
+      "end_date": "2025-11-26",
+      "start_city": "Istanbul",
+      "end_city": "Istanbul",
+      "seats_available": 22,
+      "seats_booked": 4,
+      "seats_maximum": 26
+    }
+  },
+  {
+    "LON112025": {
+      "status": "Active",
+      "name": "Best of London in 7 Days",
+      "days": 7,
+      "start_date": "2025-11-20",
+      "end_date": "2025-11-26",
+      "start_city": "London",
+      "end_city": "London",
+      "seats_available": 14,
+      "seats_booked": 11,
+      "seats_maximum": 25
+    }
+  },
+  {
+    "BAM112025": {
+      "status": "Active",
+      "name": "Best of Barcelona & Madrid in 8 Days",
+      "days": 8,
+      "start_date": "2025-11-20",
+      "end_date": "2025-11-27",
+      "start_city": "Barcelona",
+      "end_city": "Madrid",
+      "seats_available": 12,
+      "seats_booked": 12,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "ROM112025": {
+      "status": "Active",
+      "name": "Best of Rome in 7 Days",
+      "days": 7,
+      "start_date": "2025-11-20",
+      "end_date": "2025-11-26",
+      "start_city": "Rome",
+      "end_city": "Rome",
+      "seats_available": 2,
+      "seats_booked": 22,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "PAR112025": {
+      "status": "Active",
+      "name": "Best of Paris in 7 Days",
+      "days": 7,
+      "start_date": "2025-11-20",
+      "end_date": "2025-11-26",
+      "start_city": "Paris",
+      "end_city": "Paris",
+      "seats_available": 0,
+      "seats_booked": 24,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "VFR112125": {
+      "status": "Active",
+      "name": "Best of Venice, Florence & Rome in 10 Days",
+      "days": 10,
+      "start_date": "2025-11-21",
+      "end_date": "2025-11-30",
+      "start_city": "Venice",
+      "end_city": "Rome",
+      "seats_available": 4,
+      "seats_booked": 24,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "TUR112125": {
+      "status": "Active",
+      "name": "Best of Turkey in 13 Days",
+      "days": 13,
+      "start_date": "2025-11-21",
+      "end_date": "2025-12-03",
+      "start_city": "Istanbul",
+      "end_city": "Kusadasi",
+      "seats_available": 9,
+      "seats_booked": 19,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "ISC112225": {
+      "status": "Active",
+      "name": "Best of Sicily in 11 Days",
+      "days": 11,
+      "start_date": "2025-11-25",
+      "end_date": "2025-12-02",
+      "start_city": "Palermo",
+      "end_city": "Catania",
+      "seats_available": 0,
+      "seats_booked": 28,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "MSV112725": {
+      "status": "Active",
+      "name": "Best of Munich, Salzburg & Vienna in 8 Days",
+      "days": 8,
+      "start_date": "2025-11-27",
+      "end_date": "2025-12-04",
+      "start_city": "Munich",
+      "end_city": "Vienna",
+      "seats_available": 1,
+      "seats_booked": 27,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "MSV120425": {
+      "status": "Active",
+      "name": "Best of Munich, Salzburg & Vienna in 8 Days",
+      "days": 8,
+      "start_date": "2025-12-04",
+      "end_date": "2025-12-11",
+      "start_city": "Munich",
+      "end_city": "Vienna",
+      "seats_available": 0,
+      "seats_booked": 28,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "LON120425": {
+      "status": "Active",
+      "name": "Best of London in 7 Days",
+      "days": 7,
+      "start_date": "2025-12-04",
+      "end_date": "2025-12-10",
+      "start_city": "London",
+      "end_city": "London",
+      "seats_available": 3,
+      "seats_booked": 22,
+      "seats_maximum": 25
+    }
+  },
+  {
+    "ISC120425": {
+      "status": "Active",
+      "name": "Best of Sicily in 11 Days",
+      "days": 11,
+      "start_date": "2025-12-04",
+      "end_date": "2025-12-14",
+      "start_city": "Palermo",
+      "end_city": "Catania",
+      "seats_available": 0,
+      "seats_booked": 28,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "PAR120425": {
+      "status": "Active",
+      "name": "Best of Paris in 7 Days",
+      "days": 7,
+      "start_date": "2025-12-04",
+      "end_date": "2025-12-10",
+      "start_city": "Paris",
+      "end_city": "Paris",
+      "seats_available": 19,
+      "seats_booked": 5,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "ISC120725": {
+      "status": "Active",
+      "name": "Best of Sicily in 11 Days",
+      "days": 11,
+      "start_date": "2025-12-07",
+      "end_date": "2025-12-17",
+      "start_city": "Palermo",
+      "end_city": "Catania",
+      "seats_available": 5,
+      "seats_booked": 23,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "MSV121125": {
+      "status": "Active",
+      "name": "Best of Munich, Salzburg & Vienna in 8 Days",
+      "days": 8,
+      "start_date": "2025-12-11",
+      "end_date": "2025-12-18",
+      "start_city": "Munich",
+      "end_city": "Vienna",
+      "seats_available": -1,
+      "seats_booked": 29,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "ROM122025": {
+      "status": "Active",
+      "name": "Best of Rome in 7 Days",
+      "days": 7,
+      "start_date": "2025-12-20",
+      "end_date": "2025-12-26",
+      "start_city": "Rome",
+      "end_city": "Rome",
+      "seats_available": 1,
+      "seats_booked": 23,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "PAR122525": {
+      "status": "Active",
+      "name": "Best of Paris in 7 Days",
+      "days": 7,
+      "start_date": "2025-12-25",
+      "end_date": "2025-12-31",
+      "start_city": "Paris",
+      "end_city": "Paris",
+      "seats_available": -1,
+      "seats_booked": 25,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "LON122625": {
+      "status": "Active",
+      "name": "Best of London in 7 Days",
+      "days": 7,
+      "start_date": "2025-12-26",
+      "end_date": "2023-01-01",
+      "start_city": "London",
+      "end_city": "London",
+      "seats_available": 0,
+      "seats_booked": 25,
+      "seats_maximum": 25
+    }
+  },
+  {
+    "IRH081225": {
+      "status": "Active",
+      "name": "Heart of Ireland in 8 Days",
+      "days": 8,
+      "start_date": "2025-08-12",
+      "end_date": "2025-08-19",
+      "start_city": "Ennis",
+      "end_city": "Dublin",
+      "seats_available": 19,
+      "seats_booked": 9,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "IRH100725": {
+      "status": "Active",
+      "name": "Heart of Ireland in 8 Days",
+      "days": 8,
+      "start_date": "2025-10-07",
+      "end_date": "2025-10-14",
+      "start_city": "Ennis",
+      "end_city": "Dublin",
+      "seats_available": 2,
+      "seats_booked": 26,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "MSV081425": {
+      "status": "Active",
+      "name": "Best of Munich, Salzburg & Vienna in 8 Days",
+      "days": 8,
+      "start_date": "2025-08-14",
+      "end_date": "2025-08-21",
+      "start_city": "Munich",
+      "end_city": "Vienna",
+      "seats_available": 14,
+      "seats_booked": 14,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "PRB090425": {
+      "status": "Active",
+      "name": "Best of Prague & Budapest in 8 Days",
+      "days": 8,
+      "start_date": "2025-09-04",
+      "end_date": "2025-09-11",
+      "start_city": "Prague",
+      "end_city": "Budapest",
+      "seats_available": 8,
+      "seats_booked": 20,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "VFR101425": {
+      "status": "Active",
+      "name": "Best of Venice, Florence & Rome in 10 Days",
+      "days": 10,
+      "start_date": "2025-10-14",
+      "end_date": "2025-10-23",
+      "start_city": "Venice",
+      "end_city": "Rome",
+      "seats_available": 18,
+      "seats_booked": 10,
+      "seats_maximum": 28
+    }
+  },
+  {
+    "BAM101625": {
+      "status": "Active",
+      "name": "Best of Barcelona & Madrid in 8 Days",
+      "days": 8,
+      "start_date": "2025-10-16",
+      "end_date": "2025-10-23",
+      "start_city": "Barcelona",
+      "end_city": "Madrid",
+      "seats_available": 23,
+      "seats_booked": 1,
+      "seats_maximum": 24
+    }
+  },
+  {
+    "ITH102325": {
+      "status": "Active",
+      "name": "Heart of Italy in 9 Days",
+      "days": 9,
+      "start_date": "2025-10-23",
+      "end_date": "2025-10-31",
+      "start_city": "Rome",
+      "end_city": "Florence",
+      "seats_available": 20,
+      "seats_booked": 8,
+      "seats_maximum": 28
+    }
+  }
+]
