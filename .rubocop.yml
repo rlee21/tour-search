@@ -20,6 +20,9 @@ Layout/LineLength:
 Metrics/ModuleLength:
   Max: 150
 
+Metrics/MethodLength:
+  Max: 15
+
 RSpec/MultipleExpectations:
   Enabled: true
   Max: 15

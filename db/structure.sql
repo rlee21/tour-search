@@ -42,6 +42,54 @@ CREATE TABLE public.schema_migrations (
 
 
 --
+-- Name: tours; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.tours (
+    id bigint NOT NULL,
+    external_id character varying NOT NULL,
+    name character varying NOT NULL,
+    days integer NOT NULL,
+    start_date date NOT NULL,
+    end_date date NOT NULL,
+    start_city character varying NOT NULL,
+    end_city character varying NOT NULL,
+    seats_available integer,
+    seats_booked integer,
+    seats_maximum integer,
+    status integer,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
+-- Name: tours_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+--
+
+CREATE SEQUENCE public.tours_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+--
+-- Name: tours_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+--
+
+ALTER SEQUENCE public.tours_id_seq OWNED BY public.tours.id;
+
+
+--
+-- Name: tours id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tours ALTER COLUMN id SET DEFAULT nextval('public.tours_id_seq'::regclass);
+
+
+--
 -- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -58,10 +106,47 @@ ALTER TABLE ONLY public.schema_migrations
 
 
 --
+-- Name: tours tours_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.tours
+    ADD CONSTRAINT tours_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_tours_on_days; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_tours_on_days ON public.tours USING btree (days);
+
+
+--
+-- Name: index_tours_on_name; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_tours_on_name ON public.tours USING btree (name);
+
+
+--
+-- Name: index_tours_on_start_date; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_tours_on_start_date ON public.tours USING btree (start_date);
+
+
+--
+-- Name: unique_external_ids; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE UNIQUE INDEX unique_external_ids ON public.tours USING btree (external_id);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
 SET search_path TO "$user", public;
 
-
+INSERT INTO "schema_migrations" (version) VALUES
+('20240606190355');
 
