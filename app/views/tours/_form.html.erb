@@ -1,0 +1,25 @@
+<%= form_with url: search_tours_path, method: :post, local: true do |form| %>
+  <div class="field">
+    <%= form.label :name, 'Name' %>
+    <%= form.select :name, options_for_select(Tour.select(:name).distinct.order(:name).pluck(:name), params[:name]), prompt: 'Select Name' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :days, 'Length' %>
+    <%= form.select :days, options_for_select(Tour.select(:days).distinct.order(:days).pluck(:days), params[:days]), prompt: 'Select Duration' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date, 'Start Date' %>
+    <%= form.select :start_date, options_for_select(Tour.select(:start_date).distinct.order(:start_date).pluck(:start_date), params[:start_date]), prompt: 'Select Start Date' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :availability, 'Availability' %>
+    <%= form.select :availability, options_for_select(Tour::AVAILABILITY_STATUSES.values), prompt: 'Select Availability' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Search' %>
+  </div>
+<% end %>

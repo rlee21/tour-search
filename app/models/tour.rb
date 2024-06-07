@@ -39,15 +39,45 @@ class Tour < ApplicationRecord
 
   enum :status, { Active: 0, Inactive: 1 }, prefix: true
 
+  AVAILABILITY_STATUSES = {
+    available: 'Available',
+    limited: 'Limited',
+    sold_out: 'Sold Out'
+  }.freeze
+
+  scope :available, -> { where('seats_available > ?', 5) }
+  scope :limited, -> { where('seats_available > ? AND seats_available <= ?', 0, 5) }
+  scope :sold_out, -> { where('seats_available <= ?', 0) }
+
   def availability
     case seats_available
     when 6..Float::INFINITY
-      'Available'
+      AVAILABILITY_STATUSES[:available]
     when 1..5
-      'Limited'
-    when 0
-      'Sold Out'
+      AVAILABILITY_STATUSES[:limited]
+    when -Float::INFINITY..0
+      AVAILABILITY_STATUSES[:sold_out]
     end
+  end
+
+  def self.search(params)
+    @tours = Tour.all
+
+    @tours = @tours.where(days: params[:days]) if params[:days].present?
+    @tours = @tours.where(name: params[:name]) if params[:name].present?
+    @tours = @tours.where(start_date: params[:start_date]) if params[:start_date].present?
+
+    if params[:availability].present?
+      case params[:availability]
+      when 'Available'
+        @tours = @tours.available
+      when 'Limited'
+        @tours = @tours.limited
+      when 'Sold Out'
+        @tours = @tours.sold_out
+      end
+    end
+    @tours
   end
 
   private

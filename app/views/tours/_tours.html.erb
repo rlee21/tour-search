@@ -1,0 +1,31 @@
+<% if @tours.present? %>
+  <h2>Search Results</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Length</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Start City</th>
+        <th>End City</th>
+        <th>Availability</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tours.each do |tour| %>
+        <tr>
+          <td><%= tour.name %></td>
+          <td><%= tour.days %></td>
+          <td><%= tour.start_date %></td>
+          <td><%= tour.end_date %></td>
+          <td><%= tour.start_city %></td>
+          <td><%= tour.end_city %></td>
+          <td><%= tour.availability %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No tours found</p>
+<% end %>
