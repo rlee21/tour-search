@@ -41,8 +41,6 @@ FactoryBot.define do
 
     after(:build) do |tour|
       tour.end_date = tour.start_date + tour.days.days
-      # tour.seats_booked = Faker::Number.between(from: 1, to: tour.seats_maximum)
-      # tour.seats_available = tour.seats_maximum - tour.seats_booked
     end
   end
 end
