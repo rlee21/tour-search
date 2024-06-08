@@ -201,4 +201,43 @@ RSpec.describe Tour do
       end
     end
   end
+
+  describe '.destinations_all' do
+    before do
+      create(:tour, name: 'Destination A')
+      create(:tour, name: 'Destination B')
+      create(:tour, name: 'Destination C')
+    end
+
+    it 'returns a list of unique destination names ordered by name' do
+      result = described_class.destinations_all
+      expect(result).to eq(['Destination A', 'Destination B', 'Destination C'])
+    end
+  end
+
+  describe '.days_all' do
+    before do
+      create(:tour, days: 10)
+      create(:tour, days: 5)
+      create(:tour, days: 10)
+    end
+
+    it 'returns a list of unique days ordered by days' do
+      result = described_class.days_all
+      expect(result).to eq([5, 10])
+    end
+  end
+
+  describe '.start_dates_all' do
+    before do
+      create(:tour, start_date: Date.new(2025, 10, 25))
+      create(:tour, start_date: Date.new(2025, 11, 1))
+      create(:tour, start_date: Date.new(2025, 10, 25))
+    end
+
+    it 'returns a list of unique start dates ordered by start_date formatted as MM/DD/YYYY' do
+      result = described_class.start_dates_all
+      expect(result).to eq([['10/25/2025', Date.new(2025, 10, 25)], ['11/01/2025', Date.new(2025, 11, 1)]])
+    end
+  end
 end

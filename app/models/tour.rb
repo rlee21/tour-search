@@ -86,6 +86,20 @@ class Tour < ApplicationRecord
     params[:availability].present? && params[:availability] == AVAILABILITY[:sold_out]
   end
 
+  def self.destinations_all
+    Tour.select(:name).distinct.order(:name).pluck(:name)
+  end
+
+  def self.days_all
+    Tour.select(:days).distinct.order(:days).pluck(:days)
+  end
+
+  def self.start_dates_all
+    Tour.select(:start_date).distinct.order(:start_date).pluck(:start_date).map do |date|
+      [date.strftime('%m/%d/%Y'), date]
+    end
+  end
+
   private
 
   def end_date_after_start_date

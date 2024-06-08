@@ -1,19 +1,18 @@
-<%= form_with url: tours_path, method: :get, local: true, data: { turbo_frame: "search-results", turbo_action: "advance", controller: "search", action: "input->search#submit" } do |form| %>
+<%= form_with url: tours_path, method: :get, local: true, data: { turbo_frame: "search-results", controller: "search", action: "input->search#submit" } do |form| %>
   <div class="flex flex-row flex-wrap gap-4 justify-center">
     <div class="field">
       <%= form.label :name, "Name", class: "font-bold text-center block mb-1" %>
-      <%= form.select :name, options_for_select(@tours.select(:name).distinct.order(:name).pluck(:name), params[:name]), prompt: "(All)", class: "text-center block p-2 border border-gray-300 rounded" %>
+      <%= form.select :name, options_for_select(Tour.destinations_all, params[:name]), prompt: "(All)", class: "text-center block p-2 border border-gray-300 rounded" %>
     </div>
 
     <div class="field">
       <%= form.label :days, "Length", class: "font-bold text-center block mb-1" %>
-      <%= form.select :days, options_for_select(@tours.select(:days).distinct.order(:days).pluck(:days), params[:days]), prompt: "(All)", class: "text-center font-bold text-center block p-2 border border-gray-300 rounded" %>
+      <%= form.select :days, options_for_select(Tour.days_all, params[:days]), prompt: "(All)", class: "text-center font-bold text-center block p-2 border border-gray-300 rounded" %>
     </div>
 
     <div class="field">
       <%= form.label :start_date, "Start Date", class: "font-bold text-center block mb-1" %>
-      <% formatted_dates = @tours.select(:start_date).distinct.order(:start_date).pluck(:start_date).map { |date| [format_date(date), date] } %>
-      <%= form.select :start_date, options_for_select(formatted_dates, params[:start_date]), prompt: "(All)", class: "text-center block p-2 border border-gray-300 rounded" %>
+      <%= form.select :start_date, options_for_select(Tour.start_dates_all, params[:start_date]), prompt: "(All)", class: "text-center block p-2 border border-gray-300 rounded" %>
 
     </div>
 
