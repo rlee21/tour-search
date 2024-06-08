@@ -1,7 +1,7 @@
 <% if @tours.present? %>
-  <h2>Search Results</h2>
-  <table>
-    <thead>
+<div class="mt-4">
+  <table class="min-w-full bg-white border border-gray-300">
+    <thead class="py-2 px-4 border-b border-gray-300 bg-gray-200 text-center text-sm font-bold text-gray-700">
       <tr>
         <th>Name</th>
         <th>Length</th>
@@ -15,17 +15,18 @@
     <tbody>
       <% @tours.each do |tour| %>
         <tr>
-          <td><%= tour.name %></td>
-          <td><%= tour.days %></td>
-          <td><%= tour.start_date %></td>
-          <td><%= tour.end_date %></td>
-          <td><%= tour.start_city %></td>
-          <td><%= tour.end_city %></td>
-          <td><%= tour.availability %></td>
+          <td class="py-2 px-4 border-b border-gray-300 text-left"><%= tour.name %></td>
+          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.days %></td>
+          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.start_date %></td>
+          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.end_date %></td>
+          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.start_city %></td>
+          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.end_city %></td>
+          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.availability %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 <% else %>
-  <p>No tours found</p>
+  <p class="text-gray-600 text-center">No tours found</p>
 <% end %>
+</div>

@@ -1,12 +1,14 @@
 <div class="container mx-auto">
-  <%# <div class="flex justify-between items-start py-4"> %>
-  <%#   <%= image_tag "logo.svg", class: "h-8 mt-2 ml-2" %1> %>
-  <%# </div> %>
-  <div class="mt-2 flex flex-col justify-center items-center">
-    <h1 class="mb-8 text-2xl font-extrabold text-gray-900">
-      Tour Search
+    <h1 class="text-2xl text-center font-extrabold text-blue-600 border-b-4 border-yellow-400 pb-2">
+     Europe Tours
     </h1>
+    <h2 class="bg-blue-500 text-white p-4 text-center">
+      Find a Tour
+    </h1>
+  <div class="mt-2 flex flex-col justify-center items-center">
     <%= render partial: 'form' %>
-    <%= render partial: 'tours' %>
+    <%= turbo_frame_tag 'search-results' do %>
+      <%= render partial: 'tours' %>
+    <% end %>
   </div>
 </div>

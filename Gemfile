@@ -35,3 +35,6 @@ end
 group :test do
   gem 'shoulda-matchers', '~> 6.2'
 end
+
+# Use Redis for Action Cable
+gem "redis", "~> 4.0"

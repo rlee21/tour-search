@@ -2,11 +2,7 @@
 
 class ToursController < ApplicationController
   def index
-    @tours = Tour.all
-  end
-
-  def search
-    @tours = Tour.search(params)
+    @tours = Tour.search(tour_params)
   end
 
   private
