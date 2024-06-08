@@ -19,23 +19,21 @@ Tour search page for people interested in booking a tour.
   - Native setup
     - Set PostgreSQL user/password
       ```sh
-      sudo -u postgres createuser -s og-previewer
+      sudo -u postgres createuser -s tour-search
       sudo -u postgres psql
-      postgres=# \password og-previewer
-      enter og-previewer for password
+      postgres=# \password tour-search
+      enter tour-search for password
       ```
     - Run setup script
       ```sh
-      RAILS_ENV=development bin/setup
-      RAILS_ENV=test bin/rails db:prepare
+      bin/setup
       ```
   OR
 
   - Docker setup
     ```sh
     docker compose build
-    docker compose run --rm -e "RAILS_ENV=development" web bin/setup
-    docker compose run --rm -e "RAILS_ENV=test" web bin/rails db:prepare
+    docker compose run --rm web bin/setup
     ```
 ### Running the application
 
@@ -54,6 +52,7 @@ OR
 
 - Native
   ```sh
+  RAILS_ENV=test bin/rails db:prepare
   RAILS_ENV=test bin/rspec
   ```
 
@@ -61,6 +60,7 @@ OR
 
 - Docker
   ```sh
+  docker compose run --rm -e "RAILS_ENV=test" web bin/rails db:prepare
   docker compose run --rm -e "RAILS_ENV=test" web bin/rspec
   ```
 ### Running Linter

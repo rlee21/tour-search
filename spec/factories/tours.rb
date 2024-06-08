@@ -33,17 +33,16 @@ FactoryBot.define do
     status { Tour.statuses.values.sample }
     days { Faker::Number.between(from: 7, to: 14) }
     start_date { Faker::Date.between(from: '2025-01-01', to: '2025-12-31') }
-    # end_date { start_date + 7.days }
     start_city { Faker::Address.city }
     end_city { Faker::Address.city }
-    seats_maximum { Faker::Number.between(from: 20, to: 30) }
+    seats_maximum { 25 }
+    seats_booked { 23 }
+    seats_available { 2 }
 
     after(:build) do |tour|
       tour.end_date = tour.start_date + tour.days.days
-      tour.seats_booked = tour.seats_maximum - 5
-      tour.seats_available = tour.seats_maximum - tour.seats_booked
-      # tour.seats_booked = 1
-      # tour.seats_available = 5
+      # tour.seats_booked = Faker::Number.between(from: 1, to: tour.seats_maximum)
+      # tour.seats_available = tour.seats_maximum - tour.seats_booked
     end
   end
 end

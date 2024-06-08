@@ -39,7 +39,7 @@ class Tour < ApplicationRecord
 
   enum :status, { Active: 0, Inactive: 1 }, prefix: true
 
-  AVAILABILITY_STATUSES = {
+  AVAILABILITY = {
     available: 'Available',
     limited: 'Limited',
     sold_out: 'Sold Out'
@@ -52,11 +52,11 @@ class Tour < ApplicationRecord
   def availability
     case seats_available
     when 6..Float::INFINITY
-      AVAILABILITY_STATUSES[:available]
+      AVAILABILITY[:available]
     when 1..5
-      AVAILABILITY_STATUSES[:limited]
+      AVAILABILITY[:limited]
     when -Float::INFINITY..0
-      AVAILABILITY_STATUSES[:sold_out]
+      AVAILABILITY[:sold_out]
     end
   end
 
@@ -67,17 +67,23 @@ class Tour < ApplicationRecord
     @tours = @tours.where(name: params[:name]) if params[:name].present?
     @tours = @tours.where(start_date: params[:start_date]) if params[:start_date].present?
 
-    if params[:availability].present?
-      case params[:availability]
-      when 'Available'
-        @tours = @tours.available
-      when 'Limited'
-        @tours = @tours.limited
-      when 'Sold Out'
-        @tours = @tours.sold_out
-      end
-    end
+    @tours = @tours.available if search_available?(params)
+    @tours = @tours.limited if search_limited?(params)
+    @tours = @tours.sold_out if search_sold_out?(params)
+
     @tours
+  end
+
+  def self.search_available?(params)
+    params[:availability].present? && params[:availability] == AVAILABILITY[:available]
+  end
+
+  def self.search_limited?(params)
+    params[:availability].present? && params[:availability] == AVAILABILITY[:limited]
+  end
+
+  def self.search_sold_out?(params)
+    params[:availability].present? && params[:availability] == AVAILABILITY[:sold_out]
   end
 
   private

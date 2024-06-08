@@ -17,11 +17,18 @@ Layout/LineLength:
   Exclude:
     - 'spec/**/*'
 
+Metrics/AbcSize:
+  Exclude:
+    - 'app/models/*'
+
 Metrics/ModuleLength:
   Max: 150
 
 Metrics/MethodLength:
   Max: 15
+
+Rails/WhereRange:
+  Enabled: false
 
 RSpec/MultipleExpectations:
   Enabled: true
