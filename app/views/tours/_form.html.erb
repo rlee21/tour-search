@@ -1,28 +1,27 @@
 <%= form_with url: tours_path, method: :get, local: true, data: { turbo_frame: "search-results", controller: "search", action: "input->search#submit" } do |form| %>
-  <div class="flex flex-row flex-wrap gap-4 justify-center">
-    <div class="field">
+  <div class="flex flex-col md:flex-row flex-wrap gap-4 justify-center">
+    <div class="field w-full md:w-auto">
       <%= form.label :name, "Name", class: "font-bold text-center block mb-1" %>
-      <%= form.select :name, options_for_select(Tour.destinations_all, params[:name]), prompt: "(All)", class: "text-center block p-2 border border-gray-300 rounded" %>
+      <%= form.select :name, options_for_select(Tour.destinations_all, params[:name]), prompt: "(All)", class: "text-center block p-2 border border-gray-300 rounded w-full" %>
     </div>
 
-    <div class="field">
+    <div class="field w-full md:w-auto">
       <%= form.label :days, "Length", class: "font-bold text-center block mb-1" %>
-      <%= form.select :days, options_for_select(Tour.days_all, params[:days]), prompt: "(All)", class: "text-center font-bold text-center block p-2 border border-gray-300 rounded" %>
+      <%= form.select :days, options_for_select(Tour.days_all, params[:days]), prompt: "(All)", class: "text-center block p-2 border border-gray-300 rounded w-full" %>
     </div>
 
-    <div class="field">
+    <div class="field w-full md:w-auto">
       <%= form.label :start_date, "Start Date", class: "font-bold text-center block mb-1" %>
-      <%= form.select :start_date, options_for_select(Tour.start_dates_all, params[:start_date]), prompt: "(All)", class: "text-center block p-2 border border-gray-300 rounded" %>
-
+      <%= form.select :start_date, options_for_select(Tour.start_dates_all, params[:start_date]), prompt: "(All)", class: "text-center block p-2 border border-gray-300 rounded w-full" %>
     </div>
 
-    <div class="field">
+    <div class="field w-full md:w-auto">
       <%= form.label :availability, "Availability", class: "font-bold text-center block mb-1" %>
-      <%= form.select :availability, options_for_select(Tour::AVAILABILITY.values), prompt: "(All)", class: "text-center block p-2 border border-gray-300 rounded" %>
+      <%= form.select :availability, options_for_select(Tour::AVAILABILITY.values), prompt: "(All)", class: "text-center block p-2 border border-gray-300 rounded w-full" %>
     </div>
 
-    <div class="ml-4 mt-9">
-      <%= link_to "Reset", root_path, class: "font-bold p-2 bg-blue-900 text-white rounded" %>
+    <div class="ml-0 md:ml-4 mt-4 md:mt-9 w-full md:w-auto">
+      <%= link_to "Reset", root_path, class: "font-bold p-2 bg-blue-900 text-white rounded w-full" %>
     </div>
   </div>
 <% end %>

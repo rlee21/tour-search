@@ -1,32 +1,32 @@
 <% if @tours.present? %>
-<div class="mt-4">
-  <table class="min-w-full bg-white border border-gray-300">
-    <thead class="py-2 px-4 border-b border-gray-300 bg-gray-200 text-center text-sm font-extrabold text-gray-700">
-      <tr>
-        <th>Name</th>
-        <th>Length</th>
-        <th>Start Date</th>
-        <th>End Date</th>
-        <th>Start City</th>
-        <th>End City</th>
-        <th>Availability</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @tours.each do |tour| %>
+  <div class="mt-4 overflow-x-auto">
+    <table class="min-w-full bg-white border border-gray-300">
+      <thead class="py-2 px-4 border-b border-gray-300 bg-gray-200 text-center text-sm font-extrabold text-gray-700">
         <tr>
-          <td class="py-2 px-4 border-b border-gray-300 text-left"><%= tour.name %></td>
-          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.days %></td>
-          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= format_date(tour.start_date) %></td>
-          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= format_date(tour.end_date)%></td>
-          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.start_city %></td>
-          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.end_city %></td>
-          <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.availability %></td>
+          <th>Name</th>
+          <th>Length</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Start City</th>
+          <th>End City</th>
+          <th>Availability</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @tours.each do |tour| %>
+          <tr>
+            <td class="py-2 px-4 border-b border-gray-300 text-left"><%= tour.name %></td>
+            <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.days %></td>
+            <td class="py-2 px-4 border-b border-gray-300 text-center"><%= format_date(tour.start_date) %></td>
+            <td class="py-2 px-4 border-b border-gray-300 text-center"><%= format_date(tour.end_date) %></td>
+            <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.start_city %></td>
+            <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.end_city %></td>
+            <td class="py-2 px-4 border-b border-gray-300 text-center"><%= tour.availability %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 <% else %>
   <p class="mt-8 text-gray-600 text-center">No tours found</p>
 <% end %>
-</div>
