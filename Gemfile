@@ -6,6 +6,7 @@ ruby '3.2.2'
 
 gem 'bootsnap', require: false                  # Reduces boot times through caching; required in config/boot.rb
 gem 'importmap-rails', '~> 2.0'                 # Use JavaScript with ESM import maps
+gem 'pagy', '~> 8.4'                            # Pagination
 gem 'pg', '~> 1.5'
 gem 'puma', '~> 6.4'
 gem 'rails', '~> 7.1.3'

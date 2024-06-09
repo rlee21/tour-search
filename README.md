@@ -52,7 +52,7 @@ OR
 
 - Native
   ```sh
-  RAILS_ENV=test bin/rails db:prepare
+  RAILS_ENV=test bin/rails db:test:prepare
   RAILS_ENV=test bin/rspec
   ```
 
@@ -60,7 +60,7 @@ OR
 
 - Docker
   ```sh
-  docker compose run --rm -e "RAILS_ENV=test" web bin/rails db:prepare
+  docker compose run --rm -e "RAILS_ENV=test" web bin/rails db:test:prepare
   docker compose run --rm -e "RAILS_ENV=test" web bin/rspec
   ```
 ### Running Linter

@@ -9,6 +9,9 @@
     <%= render partial: 'form' %>
     <%= turbo_frame_tag 'search-results' do %>
       <%= render partial: 'tours' %>
+      <div class="mt-4 flex flex-col justify-center items-center">
+        <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+      </div>
     <% end %>
   </div>
 </div>
