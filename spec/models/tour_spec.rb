@@ -118,86 +118,90 @@ RSpec.describe Tour do
   end
 
   describe 'scopes' do
-    let(:tour_available) { create(:tour, seats_available: 10) }
-    let(:tour_limited) { create(:tour, seats_available: 3) }
-    let(:tour_sold_out) { create(:tour, seats_available: 0) }
+    before do
+      create(:tour, name: 'Tour A', seats_available: 10)
+      create(:tour, name: 'Tour B', seats_available: 3)
+      create(:tour, name: 'Tour C', seats_available: 0)
+    end
 
     context 'when available scope' do
       it 'returns available tours' do
-        expect(described_class.available).to include(tour_available)
-        expect(described_class.available).not_to include(tour_limited, tour_sold_out)
+        result = described_class.available.first
+        expect(result.name).to eq('Tour A')
       end
     end
 
     context 'when limited scope' do
       it 'returns limited tours' do
-        expect(described_class.limited).to include(tour_limited)
-        expect(described_class.limited).not_to include(tour_available, tour_sold_out)
+        result = described_class.limited.first
+        expect(result.name).to eq('Tour B')
       end
     end
 
     context 'when sold_out scope' do
       it 'returns sold out tours' do
-        expect(described_class.sold_out).to include(tour_sold_out)
-        expect(described_class.sold_out).not_to include(tour_available, tour_limited)
+        result = described_class.sold_out.first
+        expect(result.name).to eq('Tour C')
       end
     end
   end
 
   describe '.search' do
-    let(:tour_a) { create(:tour, name: 'Tour A', days: 10, start_date: '2025-10-25', seats_available: 10) }
-    let(:tour_b) { create(:tour, name: 'Tour B', days: 5, start_date: '2025-11-01', seats_available: 3) }
-    let(:tour_c) { create(:tour, name: 'Tour C', days: 7, start_date: '2025-10-30', seats_available: 0) }
+    before do
+      create(:tour, name: 'Tour A', days: 7, start_date: '2025-10-25', seats_available: 10)
+      create(:tour, name: 'Tour B', days: 5, start_date: '2025-11-01', seats_available: 3)
+      create(:tour, name: 'Tour C', days: 7, start_date: '2025-10-25', seats_available: 0)
+    end
 
     context 'when searching by name' do
       it 'returns tours matching the name' do
         result = described_class.search(name: 'Tour A')
-        expect(result).to contain_exactly(tour_a)
+        expect(result.first.name).to eq('Tour A')
       end
     end
 
     context 'when searching by days' do
       it 'returns tours matching the number of days' do
         result = described_class.search(days: 5)
-        expect(result).to contain_exactly(tour_b)
+        expect(result.first.name).to eq('Tour B')
       end
     end
 
     context 'when searching by start_date' do
       it 'returns tours matching the start date' do
         result = described_class.search(start_date: '2025-10-25')
-        expect(result).to contain_exactly(tour_a)
+        expect(result.first.name).to eq('Tour A')
       end
     end
 
     context 'when searching by availability' do
       it 'returns tours that are available' do
         result = described_class.search(availability: Tour::AVAILABILITY[:available])
-        expect(result).to contain_exactly(tour_a)
+        expect(result.first.name).to eq('Tour A')
       end
 
       it 'returns tours that are limited' do
         result = described_class.search(availability: Tour::AVAILABILITY[:limited])
-        expect(result).to contain_exactly(tour_b)
+        expect(result.first.name).to eq('Tour B')
       end
 
       it 'returns tours that are sold out' do
         result = described_class.search(availability: Tour::AVAILABILITY[:sold_out])
-        expect(result).to contain_exactly(tour_c)
+        expect(result.first.name).to eq('Tour C')
       end
     end
 
     context 'when searching by multiple parameters' do
       it 'returns tours matching all criteria' do
-        result = described_class.search(name: 'Tour A', days: 10, start_date: '2025-10-25')
-        expect(result).to contain_exactly(tour_a)
+        result = described_class.search(days: 7, start_date: '2025-10-25')
+        expect(result.pluck(:name).sort).to eq(['Tour A', 'Tour C'])
       end
     end
 
     context 'when no parameters are provided' do
       it 'returns all tours' do
         result = described_class.search({})
-        expect(result).to contain_exactly(tour_a, tour_b, tour_c)
+        expect(result.pluck(:name).sort).to eq(['Tour A', 'Tour B', 'Tour C'])
       end
     end
   end

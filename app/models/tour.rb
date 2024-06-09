@@ -61,17 +61,17 @@ class Tour < ApplicationRecord
   end
 
   def self.search(params)
-    @tours = Tour.all
+    tours = Tour.all
 
-    @tours = @tours.where(days: params[:days]) if params[:days].present?
-    @tours = @tours.where(name: params[:name]) if params[:name].present?
-    @tours = @tours.where(start_date: params[:start_date]) if params[:start_date].present?
+    tours = tours.where(days: params[:days]) if params[:days].present?
+    tours = tours.where(name: params[:name]) if params[:name].present?
+    tours = tours.where(start_date: params[:start_date]) if params[:start_date].present?
 
-    @tours = @tours.available if search_available?(params)
-    @tours = @tours.limited if search_limited?(params)
-    @tours = @tours.sold_out if search_sold_out?(params)
+    tours = tours.available if search_available?(params)
+    tours = tours.limited if search_limited?(params)
+    tours = tours.sold_out if search_sold_out?(params)
 
-    @tours
+    tours
   end
 
   def self.search_available?(params)
