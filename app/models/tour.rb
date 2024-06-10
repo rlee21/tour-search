@@ -27,6 +27,14 @@
 #  unique_external_ids        (external_id) UNIQUE
 #
 class Tour < ApplicationRecord
+  AVAILABILITY = {
+    available: 'Available',
+    limited: 'Limited',
+    sold_out: 'Sold Out'
+  }.freeze
+
+  enum :status, { Active: 0, Inactive: 1 }, prefix: true
+
   validates :external_id, :name, :days, :start_date, :end_date, :start_city, :end_city, presence: true
 
   validates :days, numericality: { only_integer: true, greater_than: 0 }
@@ -37,13 +45,8 @@ class Tour < ApplicationRecord
   validate :end_date_after_start_date
   validate :seats_available_not_exceed_maximum
 
-  enum :status, { Active: 0, Inactive: 1 }, prefix: true
-
-  AVAILABILITY = {
-    available: 'Available',
-    limited: 'Limited',
-    sold_out: 'Sold Out'
-  }.freeze
+  scope :active, -> { where(status: statuses[:Active]) }
+  scope :inactive, -> { where(status: statuses[:Inactive]) }
 
   scope :available, -> { where('seats_available > ?', 5) }
   scope :limited, -> { where('seats_available > ? AND seats_available <= ?', 0, 5) }
@@ -61,7 +64,7 @@ class Tour < ApplicationRecord
   end
 
   def self.search(params)
-    tours = Tour.all
+    tours = Tour.active
 
     tours = tours.where(days: params[:days]) if params[:days].present?
     tours = tours.where(name: params[:name]) if params[:name].present?

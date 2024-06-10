@@ -119,9 +119,10 @@ RSpec.describe Tour do
 
   describe 'scopes' do
     before do
-      create(:tour, name: 'Tour A', seats_available: 10)
-      create(:tour, name: 'Tour B', seats_available: 3)
-      create(:tour, name: 'Tour C', seats_available: 0)
+      create(:tour, name: 'Tour A', seats_available: 10, status: described_class.statuses[:Active])
+      create(:tour, name: 'Tour B', seats_available: 3, status: described_class.statuses[:Active])
+      create(:tour, name: 'Tour C', seats_available: 0, status: described_class.statuses[:Active])
+      create(:tour, name: 'Tour D', seats_available: 0, status: described_class.statuses[:Inactive])
     end
 
     context 'when available scope' do
@@ -142,6 +143,20 @@ RSpec.describe Tour do
       it 'returns sold out tours' do
         result = described_class.sold_out.first
         expect(result.name).to eq('Tour C')
+      end
+    end
+
+    context 'when active scope' do
+      it 'returns active tours' do
+        result = described_class.active
+        expect(result.pluck(:name).sort).to eq(['Tour A', 'Tour B', 'Tour C'])
+      end
+    end
+
+    context 'when inactive scope' do
+      it 'returns inactive tours' do
+        result = described_class.inactive
+        expect(result.pluck(:name).sort).to eq(['Tour D'])
       end
     end
   end
