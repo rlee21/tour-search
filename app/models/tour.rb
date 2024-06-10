@@ -64,7 +64,7 @@ class Tour < ApplicationRecord
   end
 
   def self.search(params)
-    tours = Tour.active
+    tours = Tour.active.order(:start_date, :name)
 
     tours = tours.where(days: params[:days]) if params[:days].present?
     tours = tours.where(name: params[:name]) if params[:name].present?
