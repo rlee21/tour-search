@@ -3,7 +3,7 @@
 class ToursController < ApplicationController
   def index
     tours = Tour.search(tour_params)
-    @pagy, @tours = pagy(tours.all, items: 10, anchor_string: 'data-turbo-action="advance"')
+    @pagy, @tours = pagy(tours, items: 10, anchor_string: 'data-turbo-action="advance"')
   end
 
   private
