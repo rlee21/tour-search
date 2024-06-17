@@ -24,13 +24,14 @@
 #  index_tours_on_days        (days)
 #  index_tours_on_name        (name)
 #  index_tours_on_start_date  (start_date)
+#  index_tours_on_status      (status)
 #  unique_external_ids        (external_id) UNIQUE
 #
 FactoryBot.define do
   factory :tour do
     external_id { Faker::Lorem.characters(number: 9, min_alpha: 3, min_numeric: 6) }
     name { Faker::Lorem.characters }
-    status { Tour.statuses[:Active] }
+    status { Tour.statuses[:active] }
     days { Faker::Number.between(from: 7, to: 14) }
     start_date { Faker::Date.between(from: '2025-01-01', to: '2025-12-31') }
     start_city { Faker::Address.city }

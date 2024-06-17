@@ -24,16 +24,19 @@
 #  index_tours_on_days        (days)
 #  index_tours_on_name        (name)
 #  index_tours_on_start_date  (start_date)
+#  index_tours_on_status      (status)
 #  unique_external_ids        (external_id) UNIQUE
 #
 class Tour < ApplicationRecord
+  default_scope { where(status: statuses[:active]) }
+
   AVAILABILITY = {
     available: 'Available',
     limited: 'Limited',
     sold_out: 'Sold Out'
   }.freeze
 
-  enum :status, { Active: 0, Inactive: 1 }, prefix: true
+  enum :status, { active: 0, cancelled: 1 , pending: 2}, prefix: true
 
   validates :external_id, :name, :days, :start_date, :end_date, :start_city, :end_city, presence: true
 
@@ -45,8 +48,9 @@ class Tour < ApplicationRecord
   validate :end_date_after_start_date
   validate :seats_available_not_exceed_maximum
 
-  scope :active, -> { where(status: statuses[:Active]) }
-  scope :inactive, -> { where(status: statuses[:Inactive]) }
+  scope :active, -> { where(status: statuses[:active]) }
+  scope :cancelled, -> { where(status: statuses[:cancelled]) }
+  scope :pending, -> { where(status: statuses[:pending]) }
 
   scope :available, -> { where('seats_available > ?', 5) }
   scope :limited, -> { where('seats_available > ? AND seats_available <= ?', 0, 5) }
@@ -64,7 +68,7 @@ class Tour < ApplicationRecord
   end
 
   def self.search(params)
-    tours = Tour.active.order(:start_date, :name)
+    tours = Tour.order(:start_date, :name)
 
     tours = tours.where(days: params[:days]) if params[:days].present?
     tours = tours.where(name: params[:name]) if params[:name].present?

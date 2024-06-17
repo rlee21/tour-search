@@ -24,6 +24,7 @@
 #  index_tours_on_days        (days)
 #  index_tours_on_name        (name)
 #  index_tours_on_start_date  (start_date)
+#  index_tours_on_status      (status)
 #  unique_external_ids        (external_id) UNIQUE
 #
 require 'rails_helper'

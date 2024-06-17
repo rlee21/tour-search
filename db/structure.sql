@@ -135,6 +135,13 @@ CREATE INDEX index_tours_on_start_date ON public.tours USING btree (start_date);
 
 
 --
+-- Name: index_tours_on_status; Type: INDEX; Schema: public; Owner: -
+--
+
+CREATE INDEX index_tours_on_status ON public.tours USING btree (status);
+
+
+--
 -- Name: unique_external_ids; Type: INDEX; Schema: public; Owner: -
 --
 
@@ -148,5 +155,6 @@ CREATE UNIQUE INDEX unique_external_ids ON public.tours USING btree (external_id
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20240617175722'),
 ('20240606190355');
 

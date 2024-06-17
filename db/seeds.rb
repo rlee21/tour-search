@@ -5,7 +5,7 @@ departures = JSON.parse(departures_seed_file.read)
 
 departures.each do |departure|
   external_id = departure.keys.first
-  status = departure[external_id]['status']
+  status = departure[external_id]['status'].downcase
 
   Tour.find_or_create_by!(external_id: external_id,
                           name: departure[external_id]['name'],
